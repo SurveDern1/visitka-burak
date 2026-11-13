@@ -1,0 +1,192 @@
+/* ==========================================================================
+   Лабораторная №5 · дополнительное задание
+   Сайт-визитка: секция 1 (знакомство) + секция 2 («Мои достижения»)
+   Раскладка — Flexbox. Десктоп: карточки в ряд. Медиазапрос: в колонку.
+   ========================================================================== */
+
+:root {
+  --navy: #0f2038;
+  --navy-2: #1c3357;
+  --cream: #fff7e6;
+  --amber: #f0b429;
+  --amber-dark: #8d4c17;
+  --muted: #a8bcd4;
+  --line: rgba(255, 255, 255, .12);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: #08131f;
+  font-family: "Segoe UI", Arial, sans-serif;
+  color: var(--cream);
+}
+
+html { scroll-behavior: smooth; }
+
+/* ----------------------------- СЕКЦИЯ 1 ----------------------------- */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 56px;
+  width: 1280px;
+  min-height: 620px;
+  margin: 0 auto;
+  padding: 56px 54px;
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-2) 100%);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+}
+
+.hero__text { flex: 1; min-width: 0; }
+
+.hero__hello {
+  margin: 0 0 10px;
+  color: var(--amber);
+  font-size: 15px;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+}
+.hero__hello::before { content: "// "; opacity: .7; }
+
+.hero__name { margin: 0; font-size: 62px; line-height: 1.05; letter-spacing: -.02em; }
+.hero__role { display: block; margin-top: 6px; font-size: 30px; font-weight: 400; color: var(--muted); }
+
+.hero__skill {
+  margin: 22px 0 0;
+  padding-left: 18px;
+  border-left: 3px solid var(--amber);
+  font-size: 21px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: #e7eefb;
+  max-width: 30ch;
+}
+
+.hero__about { margin: 22px 0 0; font-size: 17px; line-height: 1.6; color: #c9d7ea; max-width: 52ch; }
+.hero__about b { color: #fff; font-weight: 600; }
+
+.hero__actions { display: flex; gap: 14px; margin-top: 30px; }
+
+.btn {
+  display: inline-block;
+  padding: 14px 28px;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform .15s ease, background .15s ease, color .15s ease, border-color .15s ease;
+}
+.btn--cta { background: var(--amber); color: #10233c; }
+.btn--ghost { border: 1px solid var(--line); color: var(--cream); }
+.btn:hover { transform: translateY(-2px); }
+.btn--cta:hover { background: #ffc84d; }
+.btn--ghost:hover { border-color: var(--amber); color: var(--amber); }
+
+.hero__stack { display: flex; gap: 10px; margin: 34px 0 0; padding: 0; list-style: none; }
+.hero__stack li {
+  padding: 6px 14px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-size: 13px;
+  letter-spacing: .08em;
+  color: var(--muted);
+}
+.hero__stack li:hover { color: var(--amber); border-color: var(--amber); }
+
+.hero__photo { margin: 0; flex: none; text-align: center; }
+.hero__photo img { width: 320px; height: auto; border-radius: 18px; box-shadow: 0 22px 50px rgba(0, 0, 0, .45); }
+.hero__photo figcaption { margin-top: 12px; font-size: 13px; color: #8fa4bf; }
+
+/* ----------------------------- СЕКЦИЯ 2 ----------------------------- */
+.achievements {
+  background: var(--cream);
+  color: var(--navy);
+  padding: 74px 0 84px;
+  margin-top: 56px;
+}
+
+.achievements__inner {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 1280px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.achievements__head { max-width: 760px; }
+.achievements__head h2 { margin: 0 0 10px; font-size: 40px; letter-spacing: -.02em; }
+.achievements__sub { margin: 0; font-size: 17px; line-height: 1.6; color: #4a5f76; }
+
+/* карточки: flex-ряд на десктопе */
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  flex: 1 1 calc(25% - 24px);
+  min-width: 250px;
+  padding: 26px 24px 22px;
+  background: #fffdf8;
+  border: 1px solid #e6d9bd;
+  border-radius: 14px;
+  box-shadow: 0 10px 24px rgba(15, 32, 56, .07);
+}
+
+.card:hover { transform: translateY(-4px); border-color: var(--amber); }
+.card__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 84px;
+  height: 84px;
+  background: #fdf1d6;
+  border-radius: 50%;
+}
+.card__icon img { width: 52px; height: 52px; }
+
+.card h3 { margin: 0; font-size: 20px; line-height: 1.25; }
+.card p { margin: 0; font-size: 15px; line-height: 1.55; color: #4a5f76; }
+.card__tag {
+  margin-top: auto;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: var(--navy);
+  color: var(--cream);
+  font-size: 12px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.achievements__foot { display: flex; gap: 14px; }
+.achievements__foot .btn--cta { color: #10233c; }
+.achievements__foot .btn--ghost { border-color: #cdbb95; color: var(--navy); }
+.achievements__foot .btn--ghost:hover { border-color: var(--amber-dark); color: var(--amber-dark); }
+
+/* ------------------------ МЕДИАЗАПРОСЫ ------------------------ */
+/* планшет: карточки в две колонки */
+@media (max-width: 1100px) {
+  .hero, .achievements__inner { width: auto; }
+  .hero { flex-direction: column-reverse; text-align: left; }
+  .card { flex: 1 1 calc(50% - 24px); }
+}
+
+/* мобильные: всё в колонку, как требует задание */
+@media (max-width: 640px) {
+  .cards { flex-direction: column; }
+  .card { flex: 1 1 auto; }
+  .hero__actions, .achievements__foot, .hero__stack { flex-direction: column; align-items: stretch; }
+  .hero__name { font-size: 40px; }
+  .hero__photo img { width: 220px; }
+}

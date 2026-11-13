@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Бурак К.В. — веб-разработчик · Сайт-визитка</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ================= СЕКЦИЯ 1. ГЛАВНЫЙ ЭКРАН ================= -->
+  <section class="hero">
+    <div class="hero__text">
+      <p class="hero__hello">Привет!</p>
+      <h1 class="hero__name">Бурак К.В.
+        <span class="hero__role">веб-разработчик</span>
+      </h1>
+      <h2 class="hero__skill">Создаю современные веб-приложения: чистая вёрстка,
+        понятные интерфейсы, немного бэкенда</h2>
+      <p class="hero__about">Учусь делать сайты на <b>HTML</b>, <b>CSS</b> и <b>JavaScript</b>:
+        от учебных лабораторных до лендингов с flexbox-сеткой. Люблю, когда страница открывается
+        быстро, а код читается без вопросов.</p>
+
+      <div class="hero__actions">
+        <a class="btn btn--cta" href="mailto:hello@example.com">Связаться со мной</a>
+        <a class="btn btn--ghost" href="#achievements">Мои достижения ↓</a>
+      </div>
+
+      <ul class="hero__stack">
+        <li>HTML5</li><li>CSS3</li><li>Flexbox</li><li>Git</li>
+      </ul>
+    </div>
+
+    <figure class="hero__photo">
+      <img src="img/avatar.svg" alt="Иллюстрация: разработчик в очках на фоне окон с кодом"
+           title="Бурак К.В. — веб-разработчик" width="420" height="520">
+      <figcaption>Иллюстрация автора, формат SVG</figcaption>
+    </figure>
+  </section>
+
+  <!-- ================= СЕКЦИЯ 2. МОИ ДОСТИЖЕНИЯ ================= -->
+  <section class="achievements" id="achievements">
+    <div class="achievements__inner">
+
+      <div class="achievements__head">
+        <h2>Мои достижения</h2>
+        <p class="achievements__sub">Пять шагов, которые я сделал за время обучения вёрстке.
+          Карточки выстроены во flex-контейнере: на широком экране — в ряд,
+          на узком — друг под другом.</p>
+      </div>
+
+      <div class="cards">
+
+        <div class="card">
+          <div class="card__icon"><img src="img/medal.svg" alt="Медаль с звездой"
+               title="Учебные проекты" width="64" height="64"></div>
+          <h3>5 лабораторных по вёрстке</h3>
+          <p>Страницы о городе, сравнение автомобилей таблицами, селекторы CSS и
+             позиционирование — все работы свёрстаны вручную и сданы.</p>
+          <span class="card__tag">HTML · CSS</span>
+        </div>
+
+        <div class="card">
+          <div class="card__icon"><img src="img/froggy.svg" alt="Зелёная лягушка — тренажёр Flexbox Froggy"
+               title="Flexbox Froggy" width="64" height="64"></div>
+          <h3>Flexbox Froggy пройден</h3>
+          <p>24 уровня тренажёра: научился выравнивать элементы через justify-content,
+             align-items, order и flex-grow без подгонки значений.</p>
+          <span class="card__tag">Flexbox</span>
+        </div>
+
+        <div class="card">
+          <div class="card__icon"><img src="img/pages.svg" alt="Окно браузера со знаком кода"
+               title="Публикация на GitHub Pages" width="64" height="64"></div>
+          <h3>Страницы на GitHub Pages</h3>
+          <p>Сайт-визитка выложен в открытый репозиторий и доступен по постоянному адресу —
+             первый опыт деплоя, а не только локального открытия файла.</p>
+          <span class="card__tag">Git · Deploy</span>
+        </div>
+
+        <div class="card">
+          <div class="card__icon"><img src="img/card.svg" alt="Визитная карточка"
+               title="Сайт-визитка" width="64" height="64"></div>
+          <h3>Собственный сайт-визитка</h3>
+          <p>Две секции: знакомство и достижения. Единая цветовая схема, один шрифт,
+             адаптив через медиазапросы, плавная прокрутка по якорям.</p>
+          <span class="card__tag">Проект</span>
+        </div>
+
+      </div>
+
+      <div class="achievements__foot">
+        <a class="btn btn--cta" href="mailto:hello@example.com">Обсудить проект</a>
+        <a class="btn btn--ghost" href="#achievements">Наверх секции ↑</a>
+      </div>
+
+    </div>
+  </section>
+
+</body>
+</html>
