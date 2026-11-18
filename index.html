@@ -117,6 +117,8 @@
           <h3>HTML5</h3>
           <p>Семантическая структура страниц: header, section, figure, table и details.
             Пишу разметку так, чтобы её читали и браузер, и человек.</p>
+                    <div class="tcard__level"><span>Владение</span><b>уверенное</b></div>
+          <div class="tcard__meter" style="--lv:90%"><i></i></div>
           <span class="tcard__tag">Разметка</span>
         </div>
 
@@ -126,6 +128,8 @@
           <h3>CSS3</h3>
           <p>Селекторы, каскад и специфичность, переменные и градиенты.
             Оформляю страницы без единой картинки из интернета — только свои SVG.</p>
+                    <div class="tcard__level"><span>Владение</span><b>уверенное</b></div>
+          <div class="tcard__meter" style="--lv:85%"><i></i></div>
           <span class="tcard__tag">Стили</span>
         </div>
 
@@ -135,6 +139,8 @@
           <h3>JavaScript</h3>
           <p>Оживляю интерфейсы: обработчики событий, работа с DOM,
             переключение состояний и плавные анимации без тяжёлых библиотек.</p>
+                    <div class="tcard__level"><span>Владение</span><b>среднее</b></div>
+          <div class="tcard__meter" style="--lv:70%"><i></i></div>
           <span class="tcard__tag">Логика</span>
         </div>
 
@@ -144,6 +150,8 @@
           <h3>Grid и Flexbox</h3>
           <p>Двумерные макеты на grid-template-areas и одномерные ряды на flex.
             Прошёл Grid Garden и Flexbox Froggy — умею считать колонки, а не подбирать пиксели.</p>
+                    <div class="tcard__level"><span>Владение</span><b>уверенное</b></div>
+          <div class="tcard__meter" style="--lv:80%"><i></i></div>
           <span class="tcard__tag">Раскладка</span>
         </div>
 
@@ -153,6 +161,8 @@
           <h3>Git и GitHub Pages</h3>
           <p>Коммичу каждую лабораторную, веду ветки и публикую сайты
             на GitHub Pages — эта визитка тоже живёт в открытом репозитории.</p>
+                    <div class="tcard__level"><span>Владение</span><b>среднее</b></div>
+          <div class="tcard__meter" style="--lv:72%"><i></i></div>
           <span class="tcard__tag">Версии · Деплой</span>
         </div>
 
@@ -162,6 +172,8 @@
           <h3>Python и FastAPI</h3>
           <p>Небольшой бэкенд для демо-проектов: маршруты, JSON-ответы
             и связка фронтенда с сервером через fetch.</p>
+                    <div class="tcard__level"><span>Владение</span><b>базовое</b></div>
+          <div class="tcard__meter" style="--lv:55%"><i></i></div>
           <span class="tcard__tag">Бэкенд</span>
         </div>
 
@@ -175,5 +187,21 @@
     </div>
   </section>
 
+
+  <script>
+    (function () {
+      var cards = document.querySelectorAll('.tcard');
+      if (!('IntersectionObserver' in window)) {
+        cards.forEach(function (c) { c.classList.add('in'); });
+        return;
+      }
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+        });
+      }, { threshold: 0.35 });
+      cards.forEach(function (c) { io.observe(c); });
+    })();
+  </script>
 </body>
 </html>
